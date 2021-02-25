@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-0
+  labels:
+    app: app-0
+    tier: frontend
+  namespace: development
+spec:
+  selector:
+    matchLabels:
+      app: app-0
+      tier: frontend
+  replicas: 2
+  template:
+    metadata:
+      name: app-0
+      labels: 
+        app: app-0
+        tier: frontend
+    spec:
+      containers:
+      - name: app-0
+        image: divoianhacr.azurecr.io/app-0:1.0.0
+        ports:
+        - containerPort: 3000
