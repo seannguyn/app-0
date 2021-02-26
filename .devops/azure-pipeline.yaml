@@ -44,6 +44,8 @@ jobs:
     - script: echo Type $(Build.Type)
     - script: echo PullRequest.TargetBranch $(Build.PullRequest.TargetBranch)
     - script: echo PullRequest.TargetBranchName $(Build.PullRequest.TargetBranchName)
+    - script: ls $(Build.SourcesDirectory)
+    - script: ls $(Build.ArtifactStagingDirectory)
     - task: PublishBuildArtifacts@1
       inputs:
         targetPath: '$(Build.SourcesDirectory)/.devops'
