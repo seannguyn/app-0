@@ -48,6 +48,6 @@ jobs:
     - script: ls -la $(Build.ArtifactStagingDirectory)
     - task: PublishBuildArtifacts@1
       inputs:
-        targetPath: '$(Build.SourcesDirectory)/.devops'
+        targetPath: $(Pipeline.Workspace)/.devops'
         artifactName: 'drop'
         artifactType: 'Container'
