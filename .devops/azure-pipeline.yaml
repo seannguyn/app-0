@@ -46,8 +46,16 @@ jobs:
     - script: echo PullRequest.TargetBranchName $(Build.PullRequest.TargetBranchName)
     - script: ls -la $(Build.SourcesDirectory)/.devops
     - script: ls -la $(Build.ArtifactStagingDirectory)
-    - task: PublishBuildArtifacts@1
+    - task: CopyFiles@2
       inputs:
-        targetPath: $(Pipeline.Workspace)/.devops'
-        artifactName: 'drop'
-        artifactType: 'Container'
+        targetFolder: '$(Build.ArtifactStagingDirectory)'    
+
+    - task: PublishBuildArtifacts@1    
+      displayName: 'Publish Artifact: drop'
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+    # - task: PublishBuildArtifacts@1
+    #   inputs:
+    #     targetPath: $(Pipeline.Workspace)/.devops'
+    #     artifactName: 'drop'
+    #     artifactType: 'Container'
