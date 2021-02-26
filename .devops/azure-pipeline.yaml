@@ -68,6 +68,6 @@ jobs:
         command: buildAndPush
         repository: app0
         dockerfile: $(Build.SourcesDirectory)/Dockerfile
-        containerRegistry: 'divoianhServiceConnection'
+        containerRegistry: divoianhacr.azurecr.io
         tags: |
           1.0.0
