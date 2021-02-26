@@ -70,4 +70,4 @@ jobs:
         dockerfile: $(Build.SourcesDirectory)/Dockerfile
         containerRegistry: 'divoianhacr'
         tags: |
-          '1.0.0'
+          1.0.0
