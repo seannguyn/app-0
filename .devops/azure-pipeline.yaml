@@ -61,3 +61,13 @@ jobs:
     #     targetPath: $(Pipeline.Workspace)/.devops'
     #     artifactName: 'drop'
     #     artifactType: 'Container'
+
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: app0
+        dockerfile: $(Build.SourcesDirectory)/Dockerfile
+        containerRegistry: divoianhServiceConnection
+        tags: |
+          1.0.0
