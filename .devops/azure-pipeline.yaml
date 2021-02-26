@@ -69,5 +69,3 @@ jobs:
         repository: 'app0'
         dockerfile: $(Build.SourcesDirectory)/Dockerfile
         containerRegistry: 'divoianhacr'
-        tags: |
-          1.0.0
