@@ -48,6 +48,8 @@ jobs:
     - script: ls -la $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
       inputs:
+        Contents: |
+          .devops/*.yaml
         targetFolder: '$(Build.ArtifactStagingDirectory)'    
 
     - task: PublishBuildArtifacts@1    
