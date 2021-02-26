@@ -66,8 +66,8 @@ jobs:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: app0
+        repository: 'app0'
         dockerfile: $(Build.SourcesDirectory)/Dockerfile
-        containerRegistry: divoianhacr.azurecr.io
+        containerRegistry: 'divoianhacr'
         tags: |
-          1.0.0
+          '1.0.0'
