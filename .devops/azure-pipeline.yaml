@@ -68,4 +68,4 @@ jobs:
         command: buildAndPush
         repository: 'app0'
         dockerfile: $(Build.SourcesDirectory)/Dockerfile
-        containerRegistry: 'divoianhacr'
+        containerRegistry: 'divoianhServiceConnection'
