@@ -57,8 +57,8 @@ jobs:
         tags: |
           $(Build.BuildId)
           latest
-    - task: PublishPipelineArtifact@0
-      displayName: 'Publish pipeline artifacts'
+    - task: PublishBuildArtifacts@1
       inputs:
-        targetPath: $(Build.ArtifactStagingDirectory)/
-        archiveFilePatterns: '**/*.zip'
+        targetPath: '$(Build.SourcesDirectory)/.devops'
+        artifactName: 'drop'
+        artifactType: 'Container'
